@@ -5,9 +5,17 @@
 	<title></title>
 	<link rel="stylesheet" href="../../../public/jquery-easyui-1.5/themes/default/easyui.css"/>
 	<link rel="stylesheet" href="../../../public/jquery-easyui-1.5/themes/icon.css"/>
+	<style>
+		body{
+			padding:20px 0 0 100px;
+		}
+	</style>
 </head>
 <body>
+	<h3>打开下面的combotree，将加载第一层数据，<br/>再点击'公司E'前面的小三角，会发送第二次请求，加载公司E的子节点</h3>
 	<input id="inputCombotree"/>
+	<p style="margin-top: 230px;">第一次请求公司的接口：data1.json <a target="_blank" href="./data1.json">点击打开</a></p>
+	<p>第二次请求部门的接口：data2.json <a target="_blank" href="./data2.json">点击打开</a></p>
 	<script src="../../../public/jquery-easyui-1.5/jquery.min.js"></script>
 	<script src="../../../public/jquery-easyui-1.5/jquery.easyui.min.js"></script>
 	<script src="asyncTree.js"></script>
