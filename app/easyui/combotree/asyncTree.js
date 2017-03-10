@@ -6,6 +6,7 @@ $(function () {
 
 	$combotree.combotree({
 		url: "data1.json",//请求的后端接口，此处用静态json代替
+		method:"GET",
 		onBeforeExpand: function (node) {
 			var $tree = $combotree.combotree("tree");
 			$tree.tree("options").url = "data2.json";//请求的后端接口，此处用静态json代替
