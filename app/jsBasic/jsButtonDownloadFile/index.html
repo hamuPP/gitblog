@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.left,.right{
+			height:500px;
+			border:1px solid #dcdcdc;
+			padding: 15px;
+		}
+		.left{
+			width: 30%;
+			float: left;
+		}
+		.right{
+			width: 60%;
+			float: right;
+			box-shadow: inset 0px 0px 4px #ccc;
+			background: rgba(0, 141, 255, 0.13);
+		}
+		h5{
+			width:50px;
+			border:1px solid #dcdcdc;
+			background: #e7ffee;
+			padding: 7px;
+			margin: 7px;
+		}
+	</style>
+</head>
+<body>
+<div class="left">
+	<h4>页面</h4>
+	<button type="button" id="btn1">下载一个zip（方法1）</button>
+	<button type="button" id="btn2">下载一个zip（方法2）</button>
+</div>
+<div class="right">
+	<h4>代码</h4>
+	<h5>html</h5>
+	<pre>
+&lt;button type="button" id="btn1">下载一个zip（方法1）&lt;/button&gt;
+&lt;button type="button" id="btn2">下载一个zip（方法2）&lt;/button&gt;
+	</pre>
+	<h5>js</h5>
+	<pre>
+var $eleBtn1 = $("#btn1");
+var $eleBtn2 = $("#btn2");
+
+//已知一个下载文件的后端接口：
+https://codeload.github.com/douban/douban-client/legacy.zip/master
+//方法一：window.open()
+$eleBtn1.click(function(){
+	var url = "https://codeload.github.com/douban/douban-client/legacy.zip/master";
+	window.open(url);
+});
+
+//方法二：通过form
+$eleBtn2.click(function(){
+	var $eleForm = $("&lt;form method='get'>&lt;/form&gt;");
+
+	$eleForm.attr("action","https://codeload.github.com/douban/douban-client/legacy.zip/master");
+
+	$(document.body).append($eleForm);
+
+	//提交表单，实现下载
+	$eleForm.submit();
+});
+	</pre>
+</div>
+
+<script src="../jquery-1.11.3.min.js"></script>
+<script>
+	$(function(){
+		var $eleBtn1 = $("#btn1");
+		var $eleBtn2 = $("#btn2");
+
+		//已知一个下载文件的后端接口：https://codeload.github.com/douban/douban-client/legacy.zip/master
+		//方法一：window.open()
+		$eleBtn1.click(function(){
+			window.open("https://codeload.github.com/douban/douban-client/legacy.zip/master");
+		});
+
+		//方法二：通过form
+		$eleBtn2.click(function(){
+			var $eleForm = $("<form method='get'></form>");
+
+			$eleForm.attr("action","https://codeload.github.com/douban/douban-client/legacy.zip/master");
+
+			$(document.body).append($eleForm);
+
+			//提交表单，实现下载
+			$eleForm.submit();
+		});
+	})
+</script>
+</body>
+</html>
