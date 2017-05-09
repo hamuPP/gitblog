@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>switch按钮</title>
+	<link rel="stylesheet" href="switch.css"/>
+	<link rel="stylesheet" href="main.css"/>
+	<script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+</head>
+<body>
+<div class="wrapper">
+	<h4>switch按钮 多用于手机端</h4>
+
+	<p>尝试在PC端的显示效果</p>
+
+	<hr/>
+	<h5>只适用于移动端和谷歌浏览器和safari浏览器</h5>
+
+	<div class="switch">
+		<input id="myInput" type="checkbox" value="0" name="myinput"/>
+	</div>
+
+	<h5>适用于PC的</h5>
+	<label class="switch4PC">
+		<input id="myInputPC" type="checkbox" value="0" name="myinputPC"/>
+		<i></i>
+	</label>
+
+	<hr/>
+	<p>和其他页面元素一起组合成一个较复杂的页面交互</p>
+	<hr/>
+	<div class="demo1">
+		<span>修仙吗？</span>
+		<label class="switch4PC">
+			<input id="myInputPC2" type="checkbox" value="0" name="myinputPC2"/>
+			<i></i>
+		</label>
+		<div class="results">
+			<p class="p1" style="display: none;">和我签订契约成为马猴烧酒吧</p>
+		</div>
+	</div>
+
+	<!-- -->
+
+	<!--<button id="getSwitchBtn">getSwitchBtn1</button>-->
+	<!--<button id="getSwitchBtn1">getSwitchBtn1</button>-->
+</div>
+<script>
+
+	$(function () {
+		$("#getSwitchBtn").click(function () {
+			var $input = $("#myInput");
+			var isChecked = $input.is(":checked");
+
+			console.log(isChecked);
+		});
+
+		$("#getSwitchBtn1").click(function () {
+			var $input = $("#myInputPC");
+			var isChecked = $input.is(":checked");
+
+			console.log(isChecked);
+		});
+
+		$("#myInputPC2").click(function () {
+			var $input = $("#myInputPC2");
+			var $results = $(".results");
+			var isChecked = $input.is(":checked");
+
+			console.log(isChecked);
+
+			$results.children().hide();
+			if(isChecked){
+				$(".p1").show();
+			}else{
+				$(".p2").show();
+			}
+		});
+	});
+</script>
+</body>
+</html>
