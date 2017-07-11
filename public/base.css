@@ -1,0 +1,31 @@
+.fix-top-bar{
+	-webkit-box-shadow: 1px 2px 2px 0 #ddd ;
+	-moz-box-shadow: 1px 2px 2px 0 #ddd ;
+	box-shadow: 1px 2px 2px 0 #ddd;
+	height:50px;
+	width:100%;
+	background:#fff;
+	position:fixed;
+	top:0;
+	left:0;
+}
+
+.fix-top-bar .back-button{
+	padding:5px;
+	margin-top: 8px;
+	margin-right:10px;
+	display: block;
+	float: right;
+	border:1px solid mediumpurple;
+	text-decoration: none;
+}
+.fix-top-bar .back-button:hover{
+	background: #ddcfdd;
+}
+
+.code-wrapper{
+	border:1px solid #dcdcdc;
+	background: #eee;
+	margin:15px;
+	padding:8px;
+}

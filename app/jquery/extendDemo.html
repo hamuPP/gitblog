@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../../public/base.css">
+  <script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+  <script>
+    ;(function ($) {
+      $.fn.alertWhileClick = function () {
+        $(this).click(function () {
+          console.log($(this).val());
+        });
+      };
+
+      $.extend({
+        min: function (a, b) {
+          return a < b ? a : b;
+        },
+        max: function (a, b) {
+          return a > b ? a : b;
+        }
+      });
+    })(jQuery)
+  </script>
+</head>
+<body>
+<header class="fix-top-bar"><a class="back-button" target="_self" href="https://hamupp.github.io/gitblog/index.html">&lt; 目录页</a></header>
+
+<h2 style="padding-top:50px;">一、对$.fn的扩展。调用如$(selector).click();.show()等等</h2>
+<h3>demo1:封装一个方法：alertWhileClick，点击input时控制台打印出当前input输入框的内容</h3>
+
+<input type="text" id="demo1Input" placeholder="点我看看控制台">
+
+<p>扩展方法代码</p>
+<i style="margin-left:20px;font-size:14px;color:#999;">myPlugin.js</i>
+<pre class="code-wrapper">
+    ;(function($){
+      $.fn.alertWhileClick = function(){
+        $(this).click(function () {
+          console.log($(this).val());
+        });
+      };
+    })(jQuery)
+</pre>
+<p>调用方式</p>
+<pre class="code-wrapper">
+      &lt;input type="text" id="demo1Input"&gt;
+
+    $("#demo1Input").alertWhileClick();
+</pre>
+<h2 style="padding-top:50px;">一、对jQuery本身的扩展。调用如$.ajax</h2>
+<p>扩展方法代码</p>
+<pre class="code-wrapper">
+  $.extend({
+    myMethod: function (param1, param2....需要传入的参数) {
+      //do your work
+
+    }
+  });
+</pre>
+
+<p>调用方式</p>
+<pre class="code-wrapper">
+    $.myMethod(参数若有)
+</pre>
+
+
+</body>
+<script>
+  $(function () {
+    $("#demo1Input").alertWhileClick();
+  });
+</script>
+</html>
