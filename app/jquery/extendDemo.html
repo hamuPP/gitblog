@@ -49,7 +49,7 @@
 
     $("#demo1Input").alertWhileClick();
 </pre>
-<h2 style="padding-top:50px;">一、对jQuery本身的扩展。调用如$.ajax</h2>
+<h2 style="padding-top:50px;">二、对jQuery本身的扩展。调用如$.ajax</h2>
 <p>扩展方法代码</p>
 <pre class="code-wrapper">
   $.extend({
@@ -70,6 +70,9 @@
 <script>
   $(function () {
     $("#demo1Input").alertWhileClick();
+
+    var maxNumber = $.max(15,33);
+    console.log(maxNumber);
   });
 </script>
 </html>
